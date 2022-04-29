@@ -2,6 +2,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Footer from "./components/Footer";
 import DetailCoint from "./views/DetailCoin";
 import Home from "./views/Home";
 import NotFound from "./views/NotFound";
@@ -14,6 +15,7 @@ function App() {
         <Route path="/detail/:id" element={<DetailCoint />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -19,7 +19,7 @@ function Table() {
                     <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                       Coin
                     </th>
-                    <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th scope="col" className="text-sm font-medium text-gray-900 md:px-6 py-4 text-left">
                       Price
                     </th>
                     <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -49,17 +49,17 @@ function Table() {
                     }).map((e, index) =>                       
                   <tr className="bg-white odd:bg-gray-100 hover:bg-gray-200 transition-all border-b" key={e.name}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index + 1}</td>
-                    <td className=" text-gray-900 px-6 py-4 whitespace-nowrap flex items-center">
+                    <td className=" text-gray-900 text-sm md:text-base md:px-6 py-4 whitespace-nowrap flex items-center">
                       <img src={e.image} className="w-[30px] mr-4" alt="" />
                       <div>
                         <p>{e.name}</p>
                         <p className="uppercase">{e.symbol}</p>
                       </div>
                     </td>
-                    <td className=" text-gray-900 px-6 py-4 whitespace-nowrap">
+                    <td className=" text-gray-900 text-sm md:text-base md:px-6 py-4 whitespace-nowrap">
                       {getSymbolFromCurrency(context.currency)} {e.current_price.toLocaleString()}
                     </td>
-                    <td className=" text-gray-900 px-6 py-4 whitespace-nowrap">
+                    <td className=" text-gray-900 px-4 md:px-6 py-4 whitespace-nowrap">
                     {getSymbolFromCurrency(context.currency)} {context.getNumberUnit(e.market_cap)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -75,11 +75,17 @@ function Table() {
                     )
                     :
                     <tr>
-                      <td>Loading</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><img src="asset/loading.svg" className="w-[100px]" alt="" /></td>
                     </tr>
                     :
                     <tr>
-                      <td>Fetchinggg...</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><img src="asset/loading.svg" className="w-[100px]" alt="" /></td>
                     </tr>
                   }
                 </tbody>
