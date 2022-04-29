@@ -40,12 +40,13 @@ function Table() {
                   {
                     !context.loading ?
                     context.listCoin ?
-                    context.listCoin.filter(e => {
+                    context.listCoin.filter((e) => {
                       if (context.inputCoin === '') {
                         return e
                       }else if (e.name.toLowerCase().includes(context.inputCoin.toLowerCase())) {
                         return e
                       }
+                      return false
                     }).map((e, index) =>                       
                   <tr className="bg-white odd:bg-gray-100 hover:bg-gray-200 transition-all border-b" key={e.name}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index + 1}</td>
