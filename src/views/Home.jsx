@@ -12,7 +12,7 @@ function Home() {
             <SelectCurrency />
             </div>
             <p className="md:ml-7 mx-3 mb-3 text-xl font-medium">Top 100 Cryptocurrency Live Statistics</p>
-            <Table />
+            <Table /> 
             </AppCoinProvider>
         </div>
     )
