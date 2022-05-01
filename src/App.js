@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail/:id" element={<DetailCoint />} />
+        <Route path="/detail/:coin" element={<DetailCoint />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

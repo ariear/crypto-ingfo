@@ -1,9 +1,15 @@
 import getSymbolFromCurrency from "currency-symbol-map";
 import { useCoinContext } from "../context/coin-context";
 import numeral from "numeral";
+import { useNavigate } from "react-router-dom";
 
 function Table() {
     const context = useCoinContext()
+    let navigate = useNavigate()
+
+    const toDetail = (coin) => {
+      navigate(`/detail/${coin}`)
+    } 
 
     return (
         <div className="flex flex-col">
@@ -48,7 +54,7 @@ function Table() {
                       }
                       return false
                     }).map((e, index) =>                       
-                  <tr className="bg-white odd:bg-gray-100 hover:bg-gray-200 transition-all border-b" key={e.name}>
+                  <tr onClick={() => toDetail(e.id)} className="bg-white odd:bg-gray-100 hover:bg-gray-200 transition-all border-b" key={e.name}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index + 1}</td>
                     <td className=" text-gray-900 text-sm md:text-base md:px-6 py-4 whitespace-nowrap flex items-center">
                       <img src={e.image} className="w-[30px] mr-4" alt="" />
